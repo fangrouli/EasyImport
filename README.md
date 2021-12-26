@@ -1,65 +1,38 @@
 # easyimport README
+  
+This is the README for the extension "EasyImport".  
+  
+It is customised for Python users, who cannot specify the library directory and version for imports. The extension will help the user to detect the directory and the version of the library, for the user to determine whether it is the library he/she needs.  
+  
+The inspiration comes from me working on a borrowed GPU with only CUDA 9.0. The fact that I have to jump between tensorflow 1.9 (for GPU) and tensorflow 2.2 (on CPU) is purely suffering. And the fact that many developers often have more than one version of a certain library installed on their computer can also create trouble for those who do not have a habit of managing environment.   
+  
+This extension therefore aimes to help every developers out.  
+  
+Curretly due to my limited knowledge, the extension is only able to show the information of the library. In future updates, I would wish to update this extension so that the user can specify the library path and version for the import.  
 
-This is the README for your extension "easyimport". After writing up a brief description, we recommend including the following sections.
+## Features  
+1. The user will need to activate the extension by entering the command "Run EasyImport".  
+2. The user can highlight any library and run the commend "Find Path and Version", and the needed information will jump out.  
+  
+For example if there is an image subfolder under your extension project workspace:  
+  
+\!\[feature X\]\(images/feature-x.png\)  
+  
+## Requirements  
+  
+The extension requires a package `python-bridge` (URL: https://github.com/Submersible/node-python-bridge).  
+It can be installed in Bash with `npm install python-bridge`.  
+  
+The user need to have python in their VSCode as well.  
+  
+## Extension Settings  
+N.I.L.  
+  
+## Known Issues  
+N.A.  
+  
+## Release Notes  
+### 1.0.0  
+Initial release of EasyImport  
 
-## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
