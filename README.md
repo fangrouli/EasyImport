@@ -13,10 +13,18 @@ Curretly due to my limited knowledge, the extension is only able to show the inf
 ## Features  
 1. The user will need to activate the extension by entering the command "Run EasyImport".  
 2. The user can highlight any library and run the commend "Find Path and Version", and the needed information will jump out.  
+3. Some error-handling is placed for mis-select or uninstalled packages.  
   
-For example if there is an image subfolder under your extension project workspace:  
-  
-\!\[feature X\]\(images/feature-x.png\)  
+#### **Screenshots of the features:**
+#### Activation:
+![feature 1](images/Activation.png)  
+
+#### Main Function
+![feature 2](images/function.png)  
+
+#### Error Handling
+![feature 3](images/error1.png)  
+![feature 3*](images/error2.png)  
   
 ## Requirements  
   
