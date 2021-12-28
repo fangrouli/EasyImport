@@ -1,10 +1,5 @@
 const vscode = require('vscode');
 const editor = vscode.window.activeTextEditor;
-const express = require('express');
-const { spawn } = require('child_process');
-const app = express();
-const port = 4000;
-
 const assert = require('assert');
 const python = require('python-bridge');
 // @ts-ignore
@@ -16,10 +11,12 @@ const py = python();
 function activate(context) {
 	console.log('Congratulations, your extension "easyimport" is now active!');
 
+	// Activation method
 	let disposable1 = vscode.commands.registerCommand('easyimport.runEasyImport', function () {
 		vscode.window.showInformationMessage('The extension EasyImport has been activated!');
 	});
 
+	// Main function
 	let disposable2 = vscode.commands.registerCommand('easyimport.FindPathVersion', function () {
 		FindPathVersion();
 	});
@@ -28,28 +25,38 @@ function activate(context) {
 }
 
 async function FindPathVersion(){
+	// Hihglighted text = library name
 	const lib = editor.document.getText(editor.selection);
 
-	py.ex`import os`
-
+	// Python Scripts to run
+	py.ex`import os`;
 	py.ex`
 		def find(lib_name):
 			try:
     			lib = __import__(lib_name)
 			except:
-    			return "The library <" + lib_name + "> is not found."
+    			return "The library <" + lib_name + "> is not found.", None
 			path = os.path.dirname(lib.__file__)
-			version = lib.__version__
-			return "Path: " + path + "Version: " + version`;
+			try:
+				version = lib.__version__
+			except:
+				return "The library <" + lib_name + "> do not have version variable.", None
+			return "Path: " + path, "Version: " + version`;
 
+	// Returning output and error-handling
 	try {
 		py`find(${lib})`.then(output => {
-			vscode.window.showInformationMessage(output);
-			console.log('Successful!')
+			if (output[1] === null) {
+				vscode.window.showInformationMessage(output[0]);
+			} else {
+				console.log(output[0].toString() + "\n" + output[1].toString());
+				vscode.window.showInformationMessage(output[0]);
+				vscode.window.showInformationMessage(output[1]);
+			};
+			console.log('Extension runs successfully!');
 		});
-
 	} catch(error) {
-		console.log('Error: '+error);
+		console.log('Error: '+ error);
 	};
 }
 
