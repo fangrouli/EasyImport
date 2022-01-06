@@ -1,6 +1,8 @@
 # easyimport README
   
 This is the README for the extension "EasyImport".  
+
+The extension is made for the DevRev Hackathon - Coding with AI competition (https://devrevhack0.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=portfolio).  
   
 It is customised for Python users, who cannot specify the library directory and version for imports. The extension will help the user to detect the directory and the version of the library, for the user to determine whether it is the library he/she needs.  
   
@@ -26,6 +28,9 @@ Curretly due to my limited knowledge, the extension is only able to show the inf
 ![feature 3](images/error1.png)  
 ![feature 3*](images/error2.png)  
   
+A Demonstration video can be seen from this Youtube link:  
+https://youtu.be/SqX-qF5Bgws  
+
 ## Requirements  
   
 The extension requires a package `python-bridge` (URL: https://github.com/Submersible/node-python-bridge).  
