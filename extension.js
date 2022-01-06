@@ -48,6 +48,7 @@ async function FindPathVersion(){
 		py`find(${lib})`.then(output => {
 			if (output[1] === null) {
 				vscode.window.showInformationMessage(output[0]);
+				console.log(output[0].toString());
 			} else {
 				console.log(output[0].toString() + "\n" + output[1].toString());
 				vscode.window.showInformationMessage(output[0]);
